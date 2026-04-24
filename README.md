@@ -5,8 +5,8 @@ A browser-based Super Mario-style platformer built with **vanilla JavaScript, HT
 ---
 
 ### 📸 Preview
-<img src="images/game-screenshot.png" alt="Gameplay Screenshot" width="600">
-<img src="images/game-screenshot2.png" alt="Gameplay Screenshot" width="600">
+<img src="assets/game-screenshot.png" alt="Gameplay Screenshot" width="600">
+<img src="assets/game-screenshot2.png" alt="Gameplay Screenshot" width="600">
 
 
 ---
