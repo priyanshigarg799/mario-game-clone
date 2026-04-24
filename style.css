@@ -1,0 +1,236 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom,#5c8fef,#67a5be);
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+#game-over-title{
+    margin: 0;
+}
+h2 img{
+    width: 95px;
+    height: 85px;
+    object-fit: cover;
+    vertical-align: middle;
+    margin-left:15px;
+    border-radius: 45%;
+}
+.game-container{
+    background-color: #cbc8c8;
+    width: 150vh;
+    /* min-width: 90vh; */
+    padding:0 12px 0 12px ;
+    border: 3px solid #000;
+    border-radius: 10px;
+    /* 0 on x axis , 3px on the y axis and 8px spread on x axis */
+    box-shadow: 0 4px 8px #595757;
+}
+.ui{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight:bold;
+}
+#game-area{
+    position: relative;
+    width: 1090px;
+    height: 400px;
+    background: linear-gradient(to bottom, #397cf7 87%,#228B22 70%,#228B22 100%);
+    border: 2px solid #333;
+    overflow: hidden;
+    perspective: 400px;
+}
+#mario{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-image: url('images/Wb1qfhK.png');
+    z-index: 100;
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+}
+
+
+/* this id will be used in javascript */
+#mario.big{
+    width: 40px;
+    height: 40px;
+    background-image: url('images/Wb1qfhK.png');
+     /* --mario-size: 60px; Doubles his size */
+}
+/* Direction Flip
+.facing-left {
+  transform: scaleX(-1);
+} */
+.platform{
+    position: absolute;
+    background-size: 20px 20px;
+    background-repeat: repeat;
+    background-image: url('images/M6rwarW - Imgur.png');
+}
+.platform.ground{
+    position: absolute;
+    background-size: 20px 20px;
+    background-repeat: repeat;
+    background-image: url('images/pogC9x5 - Imgur.png');
+}
+.platform.floating{
+    position: absolute;
+    background-size: 20px 20px;
+    background-repeat: repeat;
+    background-image: url('images/pogC9x5 - Imgur.png');
+}
+.platform.blue{
+    position: absolute;
+    background-size: 20px 20px;
+    background-repeat: repeat;
+    background-image: url('images/fVscIbn - Imgur.png');
+}
+.enemy.brown{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-size: contain; /* Scales image to fit */
+    background-repeat: no-repeat;
+    background-image: url('images/KP03fR9.png');
+}
+.enemy.purple{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-size: contain; /* Scales image to fit */
+    background-repeat: no-repeat;
+    background-image: url('images/SvV4ued.png');
+}
+.mushroom{
+    position: absolute;
+    width: 15px;
+    height: 20px;
+    background-image: url('images/undefined - Imgur (1).png');
+    background-size: contain; /* Scales image to fit */
+    background-repeat: no-repeat;
+}
+.coin{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-image: url('images/wbKxhcd - Imgur.png');
+    background-size: contain; /* Scales image to fit */
+    background-repeat: no-repeat;
+    /* add animation for coin, for this coinSpin is my name of function */
+    animation: coinSpin 1s linear infinite;
+    z-index: 20;
+}
+@keyframes coinSpin{
+    0%{
+        transform: rotateY(0deg);
+    }
+    100%{
+        transform: rotateY(360deg);
+    }
+}
+.surprise-block{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-image: url('images/gesQ1KP - Imgur.png');
+    background-size: contain; /* Scales image to fit */
+    background-repeat: no-repeat;
+}
+.surprise-block.hit{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-image: url('images/bdrLpi6 - Imgur.png');
+    background-size: contain; /* Scales image to fit */
+    background-repeat: no-repeat;
+}
+
+/* encaplsulate all the pipe in one pipe element */
+.pipe{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+}
+.pipe-top{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('images/ReTPiWY - Imgur.png');
+}
+.pipe-top-right{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('images/hj2GK4n - Imgur.png');
+}
+.pipe-bottom{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('images/c1cYSbt - Imgur.png');
+}
+.pipe-bottom-right{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('images/nqQ79eI - Imgur.png');
+}
+
+.controls{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+#game-over{
+    position: absolute;
+    top: 33%;
+    padding: 25px;
+    border: 2px solid #fff;
+    background: #b5b1b1d8;
+    color: #9c0e0e;
+    border-radius: 7px;
+    text-align: center;
+    z-index: 1000;
+    display: none;
+    
+}
+#game-over p{
+    margin-top: 7px;
+    font-size: 18px;   
+}
+#restart-button{
+    color:#9c0e0e;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    padding: 7px;
+    background: none;
+}
+#restart-button:hover{
+    cursor:url('images/icons8-cursor-24.png'),auto;
+    filter: brightness(1.5);
+}

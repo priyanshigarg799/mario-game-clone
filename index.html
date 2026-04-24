@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario Game JS</title>
+    <link rel = "stylesheet" href="style.css"/>
+</head>
+<body>
+    <h1>🍄 Super Mario Game 🍄</h1>
+    <div class="game-container">
+        <!-- responsible for user interface -->
+        <div class="ui">
+            <p>Score: <span id="score">0</span></p>
+            <!-- set initial level as 1 -->
+            <p>Level: <span id="level">1</span></p>
+            <!-- set initial life of user as 3  -->
+            <p>Lives: <span id="lives">3</span></p>
+        </div>
+
+        <!-- the gaming area where the mario will play -->
+        <!-- it is id because this div is going to be usd in javascript as well -->
+        <div id="game-area">
+            <div id="mario"></div>
+        </div>
+
+        <!-- control area instructions i.e. how to control mario-->
+        <div class="controls">
+            <p>Controls:</p>
+            <p>Arrow keys:Move left/Right</p>
+            <p>Down Arrow:Enter Pipe (when on top of it)</p>
+        </div>
+    </div>
+    <!-- to know that the game is over -->
+     <div id="game-over">
+        <h2 id="game-over-title">Game Over!<img src="images/super-mario-sleeping.gif" alt="super Mario Sleeping gif"></h2>
+        <p>Score <span id="final-score">0</span></p>
+        <button id="restart-button">Play Again ?</button>
+     </div>
+    <script src = "app.js"></script>
+</body>
+</html>
